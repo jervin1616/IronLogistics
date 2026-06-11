@@ -89,13 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
       const name = form.querySelector('[name="name"]');
       const phone = form.querySelector('[name="phone"]');
       const email = form.querySelector('[name="email"]');
       const service = form.querySelector('[name="service"]');
-      const formStatus = document.getElementById('form-status');
 
       const fields = [name, phone, email, service].filter(Boolean);
       fields.forEach(clearFieldState);
@@ -108,18 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (service && !service.value) { setFieldError(service); errors.push(service); }
 
       if (errors.length > 0) {
+        e.preventDefault();
         const top = errors[0].getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
         window.scrollTo({ top, behavior: 'smooth' });
         return;
       }
 
-      if (formStatus) {
-        formStatus.className = 'success';
-        formStatus.textContent = "Thank you! We'll be in touch shortly.";
-        form.reset();
-        const top = formStatus.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      // Validation passed — form submits naturally, opening the mailto: client
     });
   }
 
