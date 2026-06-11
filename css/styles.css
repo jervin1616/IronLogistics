@@ -590,19 +590,31 @@ section {
   background: var(--light);
 }
 
-/* Before / After comparison */
-.before-after-container {
+/* Two before/after pairs side by side */
+.ba-pairs {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
-  .before-after-container {
+  .ba-pairs {
     grid-template-columns: 1fr 1fr;
     align-items: start;
   }
 }
+
+.ba-pair-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
 
 .before-after {
   position: relative;
@@ -681,13 +693,14 @@ section {
   background: var(--accent-light);
 }
 
-/* Testimonial card */
+/* Testimonial card — sits below before/after pairs */
 .testimonial {
   background: white;
   border-radius: var(--border-radius);
   padding: 2.5rem;
   box-shadow: var(--shadow);
   border-left: 4px solid var(--accent);
+  margin-bottom: 3rem;
 }
 
 .testimonial blockquote {
@@ -709,16 +722,17 @@ section {
   display: grid;
   gap: 1rem;
   margin-top: 3rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
+  /* 4 across, last item spans 2 for the wide landscape shot */
   .project-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -733,11 +747,11 @@ section {
   position: relative;
 }
 
-/* Featured landscape photo: span 2 columns on wider screens */
-@media (min-width: 768px) {
+/* Last photo (wide landscape) spans 2 columns and uses landscape ratio */
+@media (min-width: 600px) {
   .project-grid figure:last-child {
     grid-column: span 2;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
   }
 }
 
