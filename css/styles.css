@@ -404,7 +404,7 @@ section {
   flex: 1;
   min-height: 320px;
   position: relative;
-  background: url('../images/hero-background.jpg') center center / cover no-repeat;
+  background: url('../images/project-hedge-trimming.jpg') center center / cover no-repeat;
   display: flex;
   align-items: stretch;
 }
