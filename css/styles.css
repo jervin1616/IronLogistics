@@ -471,9 +471,15 @@ section {
 
 .serve-card {
   border-radius: var(--border-radius);
-  overflow: hidden;
+  background: white;
   box-shadow: var(--shadow);
   transition: all var(--transition);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 3px solid var(--accent);
 }
 
 .serve-card:hover {
@@ -481,26 +487,17 @@ section {
   box-shadow: var(--shadow-hover);
 }
 
-.serve-card-image {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
+.serve-icon {
+  width: 72px;
+  height: 72px;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
 
-.serve-card-image img {
+.serve-icon svg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.serve-card:hover .serve-card-image img {
-  transform: scale(1.05);
-}
-
-.serve-card-body {
-  padding: 1.25rem;
-  background: white;
 }
 
 .serve-card-body h3 {
@@ -513,6 +510,7 @@ section {
   font-size: 0.875rem;
   color: var(--text-light);
   margin-bottom: 0;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
