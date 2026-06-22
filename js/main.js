@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Validation passed — form submits naturally, opening the mailto: client
+      // Validation passed — form submits to Formspree
     });
   }
 
